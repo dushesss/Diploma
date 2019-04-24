@@ -8,6 +8,8 @@
     <title>Мебель для четких пацанов</title>
 </head>
 <body>
-<form action="admin\admin.php"
+<form action="admin\admin.php" method="get">
+    <input type="submit" value="Войти"/>
+</form>
 </body>
 </html><?php
