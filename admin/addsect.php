@@ -11,9 +11,3 @@
 
 </body>
 </html><?php
-/**
- * Created by PhpStorm.
- * User: dushesss
- * Date: 09.05.2019
- * Time: 18:04
- */

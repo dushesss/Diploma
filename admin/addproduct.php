@@ -14,7 +14,7 @@ if (!$link)
     <title>Добавление продукта</title>
 </head>
 <body>
-<form action="addingproduct.php" method="post">
+<form action="adding/addingproduct.php" method="post">
 
     <label for="name_product">Название продукта</label><input type="text" name="name_product" required/><br>
     <label for="key_words">Ключевые слова для поиска</label><input type="text" name="key_words"/><br>
@@ -22,11 +22,42 @@ if (!$link)
     <label for="size2">Размеры 2</label><input type="text" name="size2"/><br>
     <label for="price">Цена</label><input type="text" name="price"/><br>
     <label for="description">Описание</label><input type="text" name="description"/><br>
-    <label for="size1">Размеры 1</label><input type="text" name="size1"/><br>
-    <label for="section">Размеры 1</label><input type="text" name="size1"/><br>
     <label for="section">Раздел</label><br>
-    <input type=checkbox name=section value=очно/>очно <br>
-    <input type=checkbox name=section value=заочно/>заочно <br>
+    <?php
+    $query = "SELECT * FROM section";//эта часть динамически выводит чекбоксы для разделов
+    $result = mysqli_query($link, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '
+                <tr>
+                    <td><input type=checkbox name=section[] value=$row />' . $row['name_section'] . ' <br></td>
+                </tr>
+                ';
+    }
+    ?>
+    <label for="category">Категория</label><br>
+    <?php
+    $query = "SELECT * FROM category";//эта часть динамически выводит чекбоксы для категорий
+    $result = mysqli_query($link, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '
+                <tr>
+                    <td><input type=checkbox name=category[] value=$row />' . $row['name_category'] . ' <br></td>
+                </tr>
+                ';
+    }
+    ?>
+    <label for="subcategory">Подкатегория</label><br>
+    <?php
+    $query = "SELECT * FROM subcategory";//эта часть динамически выводит чекбоксы для подкатегорий
+    $result = mysqli_query($link, $query);
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '
+                <tr>
+                    <td><input type=checkbox name=subcategory[] value=$row />' . $row['name_subcategory'] . ' <br></td>
+                </tr>
+                ';
+    }
+    ?>
     <label for="section">Цвет</label><br>
     <?php
     $query = "SELECT * FROM colormdf";//эта часть динамически выводит чекбоксы для цвета
@@ -38,7 +69,7 @@ if (!$link)
         if ($field != 'id_product') {
             echo '
                 <tr>
-                    <td><input type=checkbox name=colormdf[] value=$field />' . $field . ' <br></td>
+                    <td><input type=checkbox name=color[] value=$field />' . $field . ' <br></td>
                 </tr>
                 ';
         }

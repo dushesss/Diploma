@@ -8,7 +8,7 @@
     <title>Добавление администратора</title>
 </head>
 <body>
-<form action="addingadm.php" method="post">
+<form action="adding/addingadm.php" method="post">
     <fieldset>
         <legend>Добавление администратора</legend>
         <label for="login">Логин</label><input type="text" name="login" required/><br>
