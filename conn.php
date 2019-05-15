@@ -16,7 +16,7 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
         //echo "Ошибка подключения к БД. Код ошибки: " . mysqli_connect_error();
         //sleep(5);
         //echo "Сейчас вы будете перенаправлены на главную страницу!";
-        //header('Location: http://'.$_SERVER['HTTP_HOST']."/index.php");
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . "/index.php");
         //include("index.php");
     } else {
         header('Location: http://' . $_SERVER['HTTP_HOST'] . "/admin/admin.php");

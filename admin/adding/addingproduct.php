@@ -7,6 +7,13 @@ if (!$link) {
     //sleep(5);
     //include("C:\OpenServer 5.3.0\OSPanel\domains\diploma\index.php");
 } else {
+    $name_product = $_POST['name_product'];
+    $key_words = $_POST['key_words'];
+    $size1 = $_POST['size1'];
+    $size2 = $_POST['size2'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+
     //$query =
 
     //;

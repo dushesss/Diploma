@@ -9,10 +9,10 @@ if (!$link) {
     //sleep(5);
     //include("C:\OpenServer 5.3.0\OSPanel\domains\diploma\index.php");
 } else {
-    $sql = "CREATE USER '" . $login . "'@'%' IDENTIFIED BY '" . $password .
-        "';GRANT ALL PRIVILEGES ON *.* TO '" . $login . "'@'%'
-        REQUIRE NONE WITH GRANT OPTION
-        MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0";
+    $sql = "CREATE USER '" . $login . "'@'%' IDENTIFIED BY '" . $password;
+    //    "';GRANT ALL PRIVILEGES ON *.* TO '" . $login . "'@'%'
+    //    REQUIRE NONE WITH GRANT OPTION
+    //    MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0";
 
     if (mysqli_query($link, $sql)) {
         echo "Добавление прошло успешно";
